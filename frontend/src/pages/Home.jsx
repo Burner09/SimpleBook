@@ -12,10 +12,11 @@ const Home = () => {
   const [books, setBooks] = useState([]);
   const [loading, setLoading] = useState(false);
   const [showType, setShowType] = useState('table');
+  const url = 'https://simplebookbackend.onrender.com'
 
   useEffect(() => {
     setLoading(true);
-    axios.get('http://localhost:5555/books')
+    axios.get(`${url}/books`)
       .then((res) => {
         setBooks(res.data.data);
         setLoading(false);

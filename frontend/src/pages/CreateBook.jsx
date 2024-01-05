@@ -5,6 +5,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import { useSnackbar } from 'notistack'
 
+
 const CreateBook = () => {
   const [title, setTitle] = useState('')
   const [author, setAuthor] = useState('')
@@ -19,7 +20,7 @@ const CreateBook = () => {
       publishYear
     };
     setLoading(true)
-    axios.post('http://localhost:5555/books', data)
+    axios.post(`https://simplebookbackend.onrender.com/books`, data)
     .then(() => {
       setLoading(false)
       enqueueSnackbar('Book Created successfully', { variant: 'success'})
